@@ -302,3 +302,4 @@ nnoremap <leader>9 9gt<cr>
 if version >= 703
     let &colorcolumn=join(range(81,81),",")
 endif
+" just to check
