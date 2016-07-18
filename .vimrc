@@ -176,7 +176,7 @@ inoremap jk <esc>
 " augroup configgroup
 "     autocmd!
 "     autocmd VimEnter * highlight clear SignColumn
-"     autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md,*.rb :call <SID>StripTrailingWhitespaces()
+     autocmd BufWritePre *.php,*.py,*.js,*.txt,*.hs,*.java,*.md,*.rb :call <SID>StripTrailingWhitespaces()
 "     autocmd BufEnter *.cls setlocal filetype=java
 "     autocmd BufEnter *.zsh-theme setlocal filetype=zsh
 "     autocmd BufEnter Makefile setlocal noexpandtab
@@ -224,17 +224,17 @@ inoremap jk <esc>
 "     endif
 " endfunction
 " 
-" " strips trailing whitespace at the end of files. this
-" " is called on buffer write in the autogroup above.
-" function! <SID>StripTrailingWhitespaces()
-"     " save last search & cursor position
-"     let _s=@/
-"     let l = line(".")
-"     let c = col(".")
-"     %s/\s\+$//e
-"     let @/=_s
-"     call cursor(l, c)
-" endfunction
+ " strips trailing whitespace at the end of files. this
+ " is called on buffer write in the autogroup above.
+ function! <SID>StripTrailingWhitespaces()
+     " save last search & cursor position
+     let _s=@/
+     let l = line(".")
+     let c = col(".")
+     %s/\s\+$//e
+     let @/=_s
+     call cursor(l, c)
+ endfunction
 " 
 " function! <SID>CleanFile()
 "     " Preparation: save last search, and cursor position.
@@ -302,4 +302,3 @@ nnoremap <leader>9 9gt<cr>
 if version >= 703
     let &colorcolumn=join(range(81,81),",")
 endif
-" just to check
