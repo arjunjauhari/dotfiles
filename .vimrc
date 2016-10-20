@@ -18,6 +18,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'nvie/vim-flake8'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
