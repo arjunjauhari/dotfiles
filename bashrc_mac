@@ -112,7 +112,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-alias vi="mvim"
-alias l="ls -lhtr"
-alias lpy="ls -lhtr *.py"
-alias ldir="ls -lhtr | grep ^d"
+
+### Added by the Bluemix CLI
+source /usr/local/Bluemix/bx/bash_autocomplete
+
+# Added for MySQL
+PATH=${PATH}:/usr/local/mysql/bin
