@@ -11,6 +11,7 @@
     ~/.bash_aliases: bash_aliases
     ~/.gitconfig: gitconfig
     ~/.liquidpromptrc: liquidpromptrc
+    ~/.vim:
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
