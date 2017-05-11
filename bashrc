@@ -130,4 +130,4 @@ PATH=${PATH}:/usr/local/mysql/bin
 [ -f /Users/arjunjauhari/.travis/travis.sh ] && source /Users/arjunjauhari/.travis/travis.sh
 
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
-[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
+[[ $- = *i* ]] && source ~/dotfiles/shells/liquidprompt/liquidprompt
