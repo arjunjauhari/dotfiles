@@ -312,3 +312,10 @@ endif
 " set switchbuffer to jump to existing buf in diff tab(works only for quickfix
 " like (:cc, :cn, :cp) and split buffer commands(:sb, :sbn,: sbp)
 set switchbuf=usetab,newtab,useopen
+" use quoteplus instead of quotequote register
+set clipboard=unnamed
+
+" setting different colorscheme for vimdiff
+if &diff
+    colorscheme industry
+endif

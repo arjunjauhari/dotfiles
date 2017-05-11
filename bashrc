@@ -57,16 +57,16 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\!\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\!:\W\$ '
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\!: \W\a\]$PS1"
     ;;
 *)
     ;;
@@ -112,16 +112,22 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-alias vi="gvim"
-alias l="ls -lhtr"
-alias lab4750="ssh -X aj526@amdpool.ece.cornell.edu"
-alias cdml="cd /home/arjun/Desktop/Cornell_courses/ML"
-alias cdla="cd /home/arjun/Desktop/Cornell_courses/Linear_Algebra"
-alias cdcc="cd /home/arjun/Desktop/Cornell_courses"
-alias ecl="$HOME/eclipse/java-mars/eclipse/eclipse"
+
 # Add ~/algs4/bin to the PATH
 export PATH=$PATH:$HOME/Desktop/Cornell_courses/algs4/bin
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 export PYTHONSTARTUP="/home/arjun/.pyrc"
 export PATH=$PATH:/opt/hadoop-2.7.2/bin
 export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+
+### Added by the Bluemix CLI
+source /usr/local/Bluemix/bx/bash_autocomplete
+
+# Added for MySQL
+PATH=${PATH}:/usr/local/mysql/bin
+
+# added by travis gem
+[ -f /Users/arjunjauhari/.travis/travis.sh ] && source /Users/arjunjauhari/.travis/travis.sh
+
+# Only load Liquid Prompt in interactive shells, not from a script or from scp
+[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
