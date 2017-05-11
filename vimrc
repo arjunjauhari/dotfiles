@@ -19,6 +19,14 @@ Plugin 'majutsushi/tagbar'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'nvie/vim-flake8'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'Raimondi/delimitMate'
+Plugin 'kien/ctrlp.vim'
+Plugin 'godlygeek/tabular'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -109,7 +117,7 @@ xnoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
 " Leader Shortcuts {{{
 let mapleader=","
 nnoremap <leader>m :silent make\|redraw!\|cw<CR>
-nnoremap <leader>w :NERDTree<CR>
+nnoremap <leader>w :NERDTreeToggle<CR>
 nnoremap <leader>u :GundoToggle<CR>
 nnoremap <leader>h :A<CR>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
@@ -117,7 +125,7 @@ nnoremap <leader>ez :vsp ~/.zshrc<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 nnoremap <leader>l :call ToggleNumber()<CR>
 nnoremap <leader><space> :noh<CR>
-nnoremap <leader>s :mksession<CR>
+nnoremap <leader>s :mksession!<CR>
 nnoremap <leader>a :Ag 
 nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
 nnoremap <leader>1 :set number!<CR>
@@ -129,28 +137,25 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 inoremap jk <esc>
 " }}}
-" " Powerline {{{
-" "set encoding=utf-8
-" "python from powerline.vim import setup as powerline_setup
-" "python powerline_setup()
-" "python del powerline_setup
-" let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
-" let g:airline_left_sep = ''
-" let g:airline_left_alt_sep = ''
-" let g:airline_right_sep = ''
-" let g:airline_right_alt_sep = ''
-" set laststatus=2
-" " }}}
+" Airline {{{
+"set encoding=utf-8
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+set laststatus=2
+" }}}
 " " CtrlP {{{
 " let g:ctrlp_match_window = 'bottom,order:ttb'
 " let g:ctrlp_switch_buffer = 0
 " let g:ctrlp_working_path_mode = 0
 " let g:ctrlp_custom_ignore = '\vbuild/|dist/|venv/|target/|\.(o|swp|pyc|egg)$'
 " " }}}
-" " NERDTree {{{
-" let NERDTreeIgnore = ['\.pyc$', 'build', 'venv', 'egg', 'egg-info/', 'dist', 'docs']
-" " }}}
+" NERDTree {{{
+let NERDTreeIgnore = ['\.pyc$', 'build', 'venv', 'egg', 'egg-info/', 'dist', 'docs']
+" }}}
 " " Syntastic {{{
 " let g:syntastic_python_flake8_args='--ignore=E501'
 " let g:syntastic_ignore_files = ['.java$']
@@ -303,3 +308,7 @@ nnoremap <leader>9 9gt<cr>
 if version >= 703
     let &colorcolumn=join(range(81,81),",")
 endif
+
+" set switchbuffer to jump to existing buf in diff tab(works only for quickfix
+" like (:cc, :cn, :cp) and split buffer commands(:sb, :sbn,: sbp)
+set switchbuf=usetab,newtab,useopen
