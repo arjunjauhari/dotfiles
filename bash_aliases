@@ -6,6 +6,7 @@ alias tagpy="ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tag
 
 # Mac specific
 alias vi="mvim"
+alias vim="mvim"
 alias cdwork="cd /Users/arjunjauhari/Desktop/work"
 alias cdml="cd /Users/arjunjauhari/Desktop/fun-ml"
 

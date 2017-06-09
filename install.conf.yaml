@@ -12,6 +12,7 @@
     ~/.gitconfig: gitconfig
     ~/.liquidpromptrc: liquidpromptrc
     ~/.vim:
+    ~/.pyrc:
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

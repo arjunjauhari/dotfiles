@@ -114,11 +114,11 @@ if ! shopt -oq posix; then
 fi
 
 # Add ~/algs4/bin to the PATH
-export PATH=$PATH:$HOME/Desktop/Cornell_courses/algs4/bin
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-export PYTHONSTARTUP="/home/arjun/.pyrc"
-export PATH=$PATH:/opt/hadoop-2.7.2/bin
-export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+#export PATH=$PATH:$HOME/Desktop/Cornell_courses/algs4/bin
+#export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+#export PYTHONSTARTUP="/home/arjun/.pyrc"
+#export PATH=$PATH:/opt/hadoop-2.7.2/bin
+#export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
 
 ### Added by the Bluemix CLI
 source /usr/local/Bluemix/bx/bash_autocomplete
@@ -131,3 +131,7 @@ PATH=${PATH}:/usr/local/mysql/bin
 
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/dotfiles/shells/liquidprompt/liquidprompt
+
+# Python startup setup
+export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles
+export PYTHONSTARTUP="$HOME/.pyrc"
