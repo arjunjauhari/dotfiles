@@ -141,7 +141,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 inoremap jk <esc>
 " }}}
 " Airline {{{
-"set encoding=utf-8
+set encoding=utf-8
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_left_sep = ''
@@ -323,13 +323,13 @@ if &diff
     colorscheme industry
 endif
 "python with virtualenv support
-py << EOF
+:python3 << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:
   project_base_dir = os.environ['VIRTUAL_ENV']
   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
+  exec(compile(open(activate_this).read(), activate_this, 'exec'), {'__file__': activate_this})
 EOF
 let python_highlight_all=1
 syntax on
