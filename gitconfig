@@ -27,7 +27,7 @@
     dfl  = "!git ll -1"  # diff file last
     dfr  = "!f() { git ll "$1"^.."$1"; }; f"    # diff file revision
     dcl  = diff --cached HEAD^   # diff commit last
-    dcr  = "!f() { git diff --word-diff "$1"^.."$1"; }; f"  # diff commit revision
+    dcr  = "!f() { git diff "$1"^.."$1"; }; f"  # diff commit revision
     f    = "!git ls-files | grep -i"   # find file in tracked files
     grep = grep -Ii     # grep in tracked files
     gr   = grep -Ii       # grep in tracked files
@@ -42,5 +42,5 @@
     bdm  = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
     pom = push origin master
     fu = fetch upstream
-    dup = diff --word-diff HEAD upstream/master
+    dup = diff HEAD upstream/master
     mup = merge upstream/master
