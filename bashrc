@@ -125,6 +125,7 @@ fi
 
 # Added for MySQL
 PATH=${PATH}:/usr/local/mysql/bin
+PATH=${PATH}:${HOME}/dotfiles/helper_scripts
 
 # added by travis gem
 [ -f /Users/arjunjauhari/.travis/travis.sh ] && source /Users/arjunjauhari/.travis/travis.sh
