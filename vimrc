@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 "" Keep Plugin commands between vundle#begin/end.
 "" plugin on GitHub repo
 Plugin 'airblade/vim-gitgutter'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
@@ -30,6 +30,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'heavenshell/vim-pydocstring'
 Plugin 'klen/python-mode'
 Plugin 'scrooloose/syntastic'
+Plugin 'tmhedberg/SimpylFold'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -141,7 +142,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 inoremap jk <esc>
 " }}}
 " Airline {{{
-set encoding=utf-8
+"set encoding=utf-8
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_left_sep = ''
@@ -323,13 +324,13 @@ if &diff
     colorscheme industry
 endif
 "python with virtualenv support
-:python3 << EOF
+py << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:
   project_base_dir = os.environ['VIRTUAL_ENV']
   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  exec(compile(open(activate_this).read(), activate_this, 'exec'), {'__file__': activate_this})
+  execfile(activate_this, dict(__file__=activate_this))
 EOF
 let python_highlight_all=1
 syntax on

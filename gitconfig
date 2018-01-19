@@ -44,3 +44,5 @@
     fu = fetch upstream
     dup = diff HEAD upstream/master
     mup = merge upstream/master
+[core]
+	editor = /usr/local/bin/mvim -f
