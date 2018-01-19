@@ -10,9 +10,8 @@ alias vim="mvim"
 alias cdwork="cd /Users/arjunjauhari/Desktop/work"
 alias cdml="cd /Users/arjunjauhari/Desktop/fun-ml"
 
-# Ubuntu specific
+# Vaio specific
 #alias vi="gvim"
-#alias tmux="TERM=screen-256color-bce tmux -u"
 #alias lab4750="ssh -X aj526@amdpool.ece.cornell.edu"
 #alias cdml="cd /home/arjun/Desktop/Cornell_courses/ML"
 #alias cdla="cd /home/arjun/Desktop/Cornell_courses/Linear_Algebra"
