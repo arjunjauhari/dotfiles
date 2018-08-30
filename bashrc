@@ -121,7 +121,7 @@ fi
 #export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
 
 ### Added by the Bluemix CLI
-#source /usr/local/Bluemix/bx/bash_autocomplete
+source /usr/local/Bluemix/bx/bash_autocomplete
 
 # Added for MySQL
 PATH=${PATH}:/usr/local/mysql/bin
@@ -136,9 +136,3 @@ PATH=${PATH}:${HOME}/dotfiles/helper_scripts
 # Python startup setup
 export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles
 export PYTHONSTARTUP="$HOME/.pyrc"
-
-# Cuda path
-export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
-
-# source tensorflow venv
-source /home/arjun/venvs/tensorflow/bin/activate
