@@ -120,15 +120,12 @@ fi
 #export PATH=$PATH:/opt/hadoop-2.7.2/bin
 #export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
 
-### Added by the Bluemix CLI
-source /usr/local/Bluemix/bx/bash_autocomplete
-
-# Added for MySQL
-PATH=${PATH}:/usr/local/mysql/bin
-PATH=${PATH}:${HOME}/dotfiles/helper_scripts
-
-# added by travis gem
-[ -f /Users/arjunjauhari/.travis/travis.sh ] && source /Users/arjunjauhari/.travis/travis.sh
+## Added for MySQL
+#PATH=${PATH}:/usr/local/mysql/bin
+#PATH=${PATH}:${HOME}/dotfiles/helper_scripts
+#
+## added by travis gem
+#[ -f /Users/arjunjauhari/.travis/travis.sh ] && source /Users/arjunjauhari/.travis/travis.sh
 
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/dotfiles/shells/liquidprompt/liquidprompt
@@ -136,3 +133,14 @@ PATH=${PATH}:${HOME}/dotfiles/helper_scripts
 # Python startup setup
 export PYTHONPATH=$PYTHONPATH:$HOME/dotfiles
 export PYTHONSTARTUP="$HOME/.pyrc"
+
+# my functions
+nvidia_dock() {
+    #do things with parameters like $1 such as
+    docker run --runtime=nvidia -it $1 bash;
+}
+
+nvidia_exec() {
+    #do things with parameters like $1 such as
+    docker exec -it $1 bash;
+}
