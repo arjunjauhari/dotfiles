@@ -4,16 +4,17 @@ alias lpy="ls -lhtr *.py"
 alias ldir="ls -lhtr | grep ^d"
 alias tagpy="ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags ./"
 alias tagjs="ctags -R --fields=+l --languages=javascript -f ./tags ./"
+alias dl="docker ps -l -q"
 
 # Mac specific
-alias vi="mvim"
-alias vim="mvim"
+#alias vi="mvim"
+#alias vim="mvim"
 alias cdwork="cd /Users/arjunjauhari/Desktop/work"
 alias cdml="cd /Users/arjunjauhari/Desktop/fun-ml"
 
 # Ubuntu specific
-#alias vi="gvim"
-#alias tmux="TERM=screen-256color-bce tmux -u"
+alias vi="vim"
+alias tmux="TERM=screen-256color-bce tmux -u"
 #
 # Old
 #alias lab4750="ssh -X aj526@amdpool.ece.cornell.edu"
