@@ -334,3 +334,5 @@ if 'VIRTUAL_ENV' in os.environ:
 EOF
 let python_highlight_all=1
 syntax on
+
+set guifont=Monaco:h16

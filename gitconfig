@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = Arjun-Jauhari
-	email = arjun.jauhari@ibm.com
+	name = Arjun Jauhari
+	email = arjunj@spotify.com
 [push]
 	default = simple
 [diff "xlsx"]
