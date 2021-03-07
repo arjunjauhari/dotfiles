@@ -4,6 +4,9 @@
 
 - clean: ['~']
 
+- shell:
+  - [sh pre-install.sh, Running pre installation script]
+
 - link:
     ~/.dotfiles: ''
     ~/.vimrc: vimrc
@@ -15,6 +18,10 @@
     ~/.pyrc:
     ~/.tmux.conf: tmux.conf
     ~/.docker_aliases: docker_aliases
+    ~/.zshrc:
+      force: true
+      path: zshrc
 
 - shell:
+  - [vim +PluginInstall +qall, Installing Vundle plugins]
   - [git submodule update --init --recursive, Installing submodules]
