@@ -5,9 +5,10 @@ alias ldir="ls -lhtr | grep ^d"
 alias tagpy="ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./tags ./"
 alias tagjs="ctags -R --fields=+l --languages=javascript -f ./tags ./"
 alias dl="docker ps -l -q"
-alias home_tunnel="ssh -f -L 5999:127.0.0.1:5900 arjunjauhari@100.8.39.111 sleep 15"
+alias home_tunnel="ssh -f -L 5999:127.0.0.1:5900 arjunjauhari@98.109.27.184 sleep 15"
 
 # Mac specific
+alias iCloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/"
 alias vi="mvim"
 alias vim="mvim"
 alias cdwork="cd /Users/arjunj/workspace"
